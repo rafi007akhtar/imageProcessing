@@ -1,0 +1,40 @@
+A list of commands used in MATLAB for image processing
+
+1. imread()
+	Reads image in a matrix
+	Example: 
+		img = imread('imageProcessing/randomimage.jpg')
+		>> size(img)
+		ans =
+		   499   748     3
+	It's a 499x748 matrix with 3 RGB channels.
+
+2. imshow() or imagesc()
+	The imshow() command shows an image in standard 8-bit format, like it would appear in a web browser. 
+	The imagesc() command displays the image on scaled axes with the min value as black and the max value as white.
+	
+3. imwrite()
+	To save your new blue image, use the imwrite() command. Example:
+		imwrite(blue_img, 'Blue4_BerkeleyTower.png', 'png');
+	
+4. rgb2gray()
+	Turns the colored image in black-and-white
+	Example:
+		img = imread('ImageProcessing_1/BerkeleyTower.png');
+		gray = rgb2gray(img);
+		imshow(gray);
+		
+5. imhist()
+	Display a histogram of image data. 
+	imhist(img,n) displays a histogram with n bins for the intensity image above a grayscale colorbar of length n. 
+	If we omit the argument, imhist() uses a default value of n = 256 if I is a grayscale image, or n = 2 if I is a binary image.
+	Example:
+		img = imread('ImageProcessing_1/BerkeleyTower.png');
+		gray = rgb2gray(img);
+		imhist(gray);
+	
+6. imadjust()
+	imadjust() adjust image intensity values. It maps the values in intensity image of an input to new values in output image. This increases the contrast of the output image.
+
+7. im2bw()
+	im2bw() converts the grayscale image to a binary image.
