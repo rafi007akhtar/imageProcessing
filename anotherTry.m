@@ -1,20 +1,3 @@
-% img = imread('C:\Users\Abhriya Roy\Desktop\Stone-Bridge.jpg');
-% size(img)
-% 
-% subplot(131); 
-% imagesc(img(:,:,1)); 
-% title('Red'); 
-% 
-% subplot(132); 
-% imagesc(img(:,:,2)); 
-% title('Green'); 
-% 
-% subplot(133); 
-% imagesc(img(:,:,3)); 
-% title('Blue'); 
-
-
-
 clc;	% Clear command window.
 clear;	% Delete all variables.
 close all;	% Close all figure windows except those created by imtool.
@@ -23,7 +6,7 @@ workspace;	% Make sure the workspace panel is showing.
 fontSize = 15;
 % Read in a standard MATLAB demo image.
 folder = fullfile(matlabroot, '\toolbox\images\imdemos');
-baseFileName = 'coins.png';
+baseFileName = 'coinses.png';
 % Get the full filename, with path prepended.
 fullFileName = fullfile(folder, baseFileName);
 if ~exist(fullFileName, 'file')
@@ -36,7 +19,7 @@ if ~exist(fullFileName, 'file')
 		return;
 	end
 end
-grayImage = imread('C:\Users\Abhriya Roy\Desktop\download.jpg');
+grayImage = imread(fullFileName);
 % Get the dimensions of the image.  numberOfColorBands should be = 1.
 [rows columns numberOfColorBands] = size(grayImage);
 % Display the original image.

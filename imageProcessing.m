@@ -36,7 +36,7 @@ if ~exist(fullFileName, 'file')
 		return;
 	end
 end
-grayImage = imread('C:\Users\Abhriya Roy\Desktop\download.jpg');
+grayImage = imread('G:\MATLAB\imageProcessing\noise.jpg');
 % Get the dimensions of the image.  numberOfColorBands should be = 1.
 [rows columns numberOfColorBands] = size(grayImage);
 % Display the original image.
@@ -51,7 +51,7 @@ subplot(2, 2, 2);
 imshow(noisyImage);
 title('Image with Salt and Pepper Noise', 'FontSize', fontSize);
 % Median Filter the image:
-medianFilteredImage = medfilt2(noisyImage, [3 3]);
+medianFilteredImage = medfilt2(noisyImage, [3,3]);
 % Find the noise.  It will have a gray level of either 0 or 255.
 noiseImage = (noisyImage == 0 | noisyImage == 255);
 % Get rid of the noise by replacing with median.
@@ -60,5 +60,5 @@ noiseFreeImage(noiseImage) = medianFilteredImage(noiseImage);
 noiseFreeImage2 = medianFilteredImage(noiseImage);% Replace.
 % Display the image.
 subplot(2, 2, 3);
-imshow(noiseFreeImage2);
+imshow(noisyImage,noiseFreeImage2,'montage');
 title('Restored Image', 'FontSize', fontSize);
